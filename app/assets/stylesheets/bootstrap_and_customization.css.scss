@@ -1,8 +1,15 @@
 $body-bg:														#ecf0f1;
-$navbar-inverse-color:							#1abc9c;
-$navbar-inverse-link-color:					#ecf0f1;
-$navbar-inverse-link-hover-color:		#3498db;
+$navbar-color:											#1abc9c;
+$navbar-default-bg:									black;
+$navbar-default-brand-color:				#e8335a;
+$navbar-default-link-color:					white;
+$navbar-default-link-hover-color:		#3498db;
 $jumbotron-bg:											white;
 $brand-primary:											#3498db;
 
 @import 'bootstrap';
+
+// This creates a new class titled 'center' which I can then use inside of HTML page elements, like the jumbotron
+.center {
+	text-align:	center;
+}
