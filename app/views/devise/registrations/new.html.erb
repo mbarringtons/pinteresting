@@ -1,18 +1,40 @@
-<h2>Sign up</h2>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h2>Sign up</h2>
+	</div> <!-- end panel heading -->
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <div class="panel-body">
+		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+			<%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+				<div class = "row">
+			  	<div class = "form-group col-xs-6">
+						<%= f.label :email %>
+			  		<%= f.email_field :email, :autofocus => true, class: "form-control", placeholder: "Enter e-mail here" %>
+					</div>
+				</div> <!-- end row -->
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+				<div class = "row">
+				  <div class = "form-group col-xs-6">
+						<%= f.label :password %>
+				 	 	<%= f.password_field :password, class: "form-control", placeholder: "Enter password here" %>
+					</div>
+				</div> <!-- end row -->
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+			  <div class = "row">
+					<div class = "form-group col-xs-6">
+						<%= f.label :password_confirmation %>
+			  		<%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm password here" %>
+					</div>
+				</div> <!-- end row -->
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+			  <div class = "form-group">
+					<%= f.submit "Sign up", class: "btn btn-primary" %>
+				</div>
+			<% end %>
+		</div> <!-- end body panel -->
+	
+	<div class="panel-footer">	
+		<%= render "devise/shared/links" %>
+	</div>
+</div>
