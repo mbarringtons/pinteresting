@@ -18,7 +18,13 @@
 	      <li><%= link_to "home", root_path %></li>
 				<li><%= link_to "about", about_path %></li>
 				<li><%= link_to "team", team_path %></li>
+				<% if user_signed_in? %>
+					<li><%= link_to "log out", destroy_user_session_path, method: :delete %></li>
+				<% else %>
+					<li><%= link_to "log in", new_user_session_path %></li>
+				<% end %>
 	    </ul>
+			
 	  </div><!-- /.navbar-collapse -->
 	</div><!-- /.container -->
 </nav>
