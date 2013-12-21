@@ -15,15 +15,16 @@
 	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 	    <ul class="nav navbar-nav navbar-right">
-	      <li><%= link_to "home", root_path %></li>
+				
+			<% if user_signed_in? %>
+				<li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
+			<% else %>
+				<li><%= link_to "sign in", new_user_session_path %></li>
+			<% end%>
+	      
+				<li><%= link_to "home", root_path %></li>
 				<li><%= link_to "about", about_path %></li>
 				<li><%= link_to "team", team_path %></li>
-				<% if user_signed_in? %>
-					<li><%= link_to "account settings", edit_user_registration_path %></li>
-					<li><%= link_to "sign out", destroy_user_session_path, method: :delete %></li>
-				<% else %>
-					<li><%= link_to "sign in", new_user_session_path %></li>
-				<% end %>
 	    </ul>
 			
 	  </div><!-- /.navbar-collapse -->

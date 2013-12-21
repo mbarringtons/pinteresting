@@ -1,33 +1,33 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h2>Sign in</h2>
-	</div> <!-- end panel heading -->
+		<div class = "panel-title">
+			<h2>Sign in</h2>
+		</div> <!-- end panel title -->
+	</div>
 	
   <div class="panel-body">
-		<div class = "row">
-	  	<div class = "form-group col-xs-6">
 		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-
-		  	<%= f.label :email %>
-		  	<%= f.email_field :email, :autofocus => true, class: "form-control", placeholder: "Enter e-mail here" %>
-			</div>
-		</div>
-
-		<div class = "row">
-	  	<div class = "form-group col-xs-6">
-		  	<%= f.label :password %><br />
-		  	<%= f.password_field :password, class: "form-control", placeholder: "Enter password here" %>
-			</div>
-		</div>
-
-		  <% if devise_mapping.rememberable? -%>
-		    <div class = "btn-group">
-					<div class = "checkbox">
-						<%= f.check_box :remember_me, class: "btn btn-primary" %>
-						<%= f.label :remember_me %>
-					</div>
+		
+			<div class = "row">
+	  		<div class = "form-group col-xs-6">
+		  		<%= f.label :email %>
+		  		<%= f.email_field :email, :autofocus => true, class: "form-control", placeholder: "Enter e-mail here" %>
 				</div>
-		  <% end -%>
+			</div>
+
+			<div class = "row">
+	  		<div class = "form-group col-xs-6">
+		  		<%= f.label :password %><br />
+		  		<%= f.password_field :password, class: "form-control", placeholder: "Enter password here" %>
+				</div>
+			</div>
+
+		  <div class = "btn-group">
+				<div class = "checkbox">
+					<%= f.check_box :remember_me, class: "btn btn-primary" %>
+					<%= f.label :remember_me %>
+				</div>
+			</div>
 
 		  <div class = "form-group">
 				<%= f.submit "Sign in", class: "btn btn-primary" %>
@@ -38,3 +38,4 @@
 	<div class = "panel-footer">	
 		<%= render "devise/shared/links" %>
 	</div>
+</div>
