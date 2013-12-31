@@ -1,12 +1,7 @@
 <div class = "jumbotron center">
 	<h2>Hundreds of people are creating their own Pinteresting web application.</h2>
 	
-	
-	<% if user_signed_in? %>
-		# do something
-	<% else %>
 		<p>Click to <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %> for mine</p>
 		<p>Already have an account? <%= link_to "Sign in Now", new_user_session_path %>
-	<% end %>	
-		
+
 </div>
