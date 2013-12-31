@@ -20,6 +20,11 @@ module Pinteresting
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     
+    # This starts up the database connection for 'rails console'
+    console do
+      ActiveRecord::Base.connection
+    end
+    
     # Required for Heroku
     config.assets.initialize_on_precompile = false
   end
