@@ -7,17 +7,16 @@
 			<div class="panel-body">
 			  <p><%= pin.description %></p><!-- The equal sign is there to show something on the page-->
 				<p><strong><%= pin.user.email if pin.user %></strong></p>
-				<%= link_to 'Show', pin_path(pin )%>
-					<% if pin.user == current_user %>
-						<div class="actions">
-					    <%= link_to 'Edit', edit_pin_path(pin) %>
-					    <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' 
-								} do%>
-									<span class="glyphicon glyphicon-trash"></span>
-									Delete
-							<% end %>
-						</div>
-					<% end %>
+				<% if pin.user == current_user %>
+					<div class="actions">
+				    <%= link_to 'Edit', edit_pin_path(pin) %>
+				    <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' 
+							} do%>
+								<span class="glyphicon glyphicon-trash"></span>
+								Delete
+						<% end %>
+					</div>
+				<% end %>
 			</div>
 		</div>
 	<% end %>
