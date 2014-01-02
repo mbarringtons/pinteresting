@@ -9,6 +9,13 @@
 
 				<div class = "row">
 			  	<div class = "form-group col-xs-6">
+						<%= f.label :name %>
+			  		<%= f.text_field :name, :autofocus => true, class: "form-control", placeholder: "Enter name here" %>
+					</div>
+				</div> <!-- end row -->
+
+				<div class = "row">
+			  	<div class = "form-group col-xs-6">
 						<%= f.label :email %>
 			  		<%= f.email_field :email, :autofocus => true, class: "form-control", placeholder: "Enter e-mail here" %>
 					</div>
