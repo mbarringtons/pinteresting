@@ -7,7 +7,7 @@ class PinsController < ApplicationController
 
   # Loads app -> views -> pins -> index.html.erb
   def index
-    @pins = Pin.all.order("created_at DESC")
+    @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
   end 
 
   def show
